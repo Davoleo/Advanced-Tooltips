@@ -26,8 +26,16 @@ minecraft {
     mappings = "snapshot_20180814"
 }
 
+repositories {
+    maven {
+        name = 'ModMaven'
+        url = 'modmaven.k-4u.nl'
+    }
+}
+
 dependencies {
 
+    compileOnly 'mezz.jei:jei_1.12.2:4.15.+:api'
 }
 
 processResources {
