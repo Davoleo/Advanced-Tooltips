@@ -1,6 +1,6 @@
 package com.rebirthofthenight.advancedtooltips;
 
-import com.rebirthofthenight.advancedtooltips.proxy.ProxyCommon;
+import com.rebirthofthenight.advancedtooltips.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,8 +18,8 @@ public class Main
 
     public static Logger logger;
 
-    @SidedProxy(clientSide = "com.rebirthofthenight.advancedtooltips.proxy.ProxyClient", serverSide = "com.rebirthofthenight.advancedtooltips.proxy.ProxyCommon")
-    public static ProxyCommon proxy;
+    @SidedProxy(clientSide = "com.rebirthofthenight.advancedtooltips.proxy.ClientProxy", serverSide = "com.rebirthofthenight.advancedtooltips.proxy.ServerProxy")
+    public static IProxy proxy;
 
     @EventHandler
     public void preInit(FMLPreInitializationEvent event)
@@ -31,10 +31,11 @@ public class Main
     @EventHandler
     public void init(FMLInitializationEvent event)
     {
-        proxy.init(event);
+
     }
 
-    public void postInit(FMLPostInitializationEvent event){
-        proxy.postInit(event);
+    public void postInit(FMLPostInitializationEvent event)
+    {
+
     }
 }
