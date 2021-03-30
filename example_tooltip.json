@@ -1,0 +1,92 @@
+{
+  "item": "registry:name",
+  "components": [
+    {
+      "_comment": "The Identifier could be moved to be a key for a component object inside of the components object, it's just another way to structure things",
+      "identifier": "example_identifier",
+      "condition_logic": "AND|OR|XOR",
+      "_comment_lore_and_name": "I am skipping lore since it's basically just like NBT in our perspective and name is probably just the registry name? which is included in item_name",
+      "conditions": [
+        {
+          "_comment": "If you're wondering what convention these key ids should adhere to, imo they should be the same as in the Keyboard LWJGL class and then we can write a wiki so that people can understand what each id means",
+          "_comment_todo": "If we want to support key combination then the key property might need to be an array in the future",
+          "type": "key_held",
+          "key": 2
+        },
+        {
+          "type": "key_toggle",
+          "key": 1
+        },
+        {
+          "type": "always"
+        },
+        {
+          "type": "never"
+        },
+        {
+          "type": "dimension",
+          "dimension_ids": []
+        },
+        {
+          "_comment": "start can be higher than end in certain situation (refer to the doc) | one whole day should be 24000",
+          "type": "time_span",
+          "start": 2000,
+          "end": 8000
+        },
+        {
+          "type": "game_stage",
+          "stage_name": "example_stage"
+        },
+        {
+          "_comment": "is this the translation key or the registry names (it'd be better to ask)",
+          "type": "item_name",
+          "localized": false
+        },
+        {
+          "type": "enchantment",
+          "name": "minecraft:sharpness",
+          "levelMin": 1,
+          "levelMax": 2
+        },
+        {
+          "type": "potion_effect",
+          "name": "minecraft:poison",
+          "duration_and_amplifier": "TBD"
+        },
+        {
+          "type": "nbt",
+          "check_type": "equals|contains|!contains|",
+          "tag": {
+            "bool_tag": true,
+            "string_key": "string_elem",
+            "compound": {
+              "sub_key": "value"
+            }
+          }
+        },
+        {
+          "type": "durability",
+          "checks": [
+            {
+              "check_type": "equals|lessThan|moreThan",
+              "value": 90
+            }
+          ]
+        },
+        {
+          "type": "quantity",
+          "checks": [
+            {
+              "check_type": "equals|lessThan|moreThan",
+              "value": 32
+            }
+          ]
+        },
+        {
+          "type": "modid",
+          "id": "minecraft"
+        }
+      ]
+    }
+  ]
+}
