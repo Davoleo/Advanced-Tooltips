@@ -1,6 +1,8 @@
 package com.rebirthofthenight.advancedtooltips;
 
+import com.rebirthofthenight.advancedtooltips.config.ConfigHelper;
 import com.rebirthofthenight.advancedtooltips.proxy.IProxy;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -26,6 +28,8 @@ public class Main
     {
         logger = event.getModLog();
         proxy.preInit(event);
+        //Register Config ref as an event bus subscriber to listen to config changes
+        MinecraftForge.EVENT_BUS.register(ConfigHelper.class);
     }
 
     @EventHandler
