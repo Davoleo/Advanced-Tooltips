@@ -28,8 +28,8 @@ minecraft {
 
 repositories {
     maven {
-        name = 'ModMaven'
-        url = 'modmaven.k-4u.nl'
+        name = "Progwml6 maven"
+        url = "http://dvs1.progwml6.com/files/maven"
     }
 }
 
