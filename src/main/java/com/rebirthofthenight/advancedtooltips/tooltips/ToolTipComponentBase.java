@@ -10,8 +10,8 @@ import java.util.List;
 public class ToolTipComponentBase implements IToolTipComponent {
 
     /**
-     * The logic for how conditionals are interpreted.
-     * */
+     * The logic for how conditionals are combined
+     */
     public enum ConditionCombinationLogic {
         /**OR -> if any conditional is true, returns true, else false */
         OR,
@@ -27,10 +27,9 @@ public class ToolTipComponentBase implements IToolTipComponent {
 
     // TODO I'm not sure if LinkedList would be better? there should be relatively little insertion/deletion of these so array seems faster.
     // I may be completely confused though. -dracominer
-    protected List<IToolTipConditional> conditions = new ArrayList<IToolTipConditional>();
+    protected List<IToolTipConditional> conditions = new ArrayList<>();
 
     protected IToolTipValue value;
-
 
     @Override
     public String getInternalName() {
