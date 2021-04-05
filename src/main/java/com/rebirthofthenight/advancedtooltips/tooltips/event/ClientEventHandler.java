@@ -10,6 +10,6 @@ public class ClientEventHandler {
     public static void onKeyEvent(InputEvent.KeyInputEvent event) {
         int key = Keyboard.getEventKey();
         boolean wasPressed = Keyboard.getEventKeyState();
-        // TODO: 30/03/2021 Call the correct condition handler method
+        // TODO: 30/03/2021 These two methods could be useful to implement KeyToggleCondition
     }
 }
