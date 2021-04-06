@@ -86,7 +86,100 @@
           "type": "modid",
           "id": "minecraft"
         }
-      ]
+      ],
+
+      "_icon_comment": "We're going to need some way to organize and load external texture resources (maybe like Resource Loader mod does?)",
+      "icon": "resources/thismod/example_icon.png",
+
+      "_value_comment": "There will obv be only one values per component (I'm adding multiple here just to have an example of each one written down)",
+      "value1": {
+        "type": "none"
+      },
+      "value2": {
+        "type": "string",
+        "value": "",
+        "formatting": {
+          "color": "9F3521",
+          "classic_color": "§2",
+          "bold": true,
+          "underlined": false,
+          "obfuscated": false,
+          "italic": false,
+          "has_shadow": true
+        }
+      },
+      "value3": {
+        "type": "item",
+        "localized": true,
+        "_comment": "this feature below would be really cool to add",
+        "formatting": "resources/thismod/external_formatting.json"
+      },
+      "value4": {
+        "type": "ore",
+        "ore": "ore:ingotCopper",
+        "show_ore_namespace": false
+      },
+      "value5": {
+        "type": "mod_name",
+        "show_raw_modid": false
+      },
+      "value6": {
+        "type": "enchantment",
+        "level": {
+          "enabled": true,
+          "prefixed": false,
+          "show_highest_possible": false
+        }
+      },
+      "value7": {
+        "_comment": "I think it's supposed to be a constant potion thing?",
+        "type": "potion",
+        "id": "minecraft:swiftness",
+        "level": {
+          "enabled": true,
+          "prefixed": false
+        },
+        "duration": {
+          "enabled": false
+        },
+        "potion_type": {
+          "enabled": true,
+          "prefixed": true
+        }
+      },
+      "value8": {
+        "type": "nbt",
+        "key": "example_key.1.sub_key"
+      },
+      "value9": {
+        "type": "durability",
+        "value_format": "FRACTION|RAW_VALUE|PERCENTAGE"
+      },
+      "value10": {
+        "type": "stack_size",
+        "fraction_format": true
+      },
+      "value11": {
+        "type": "burn_time",
+        "unit": "TICK|SECOND|MINUTE|HOUR"
+      },
+      "value12": {
+        "type": "damage",
+        "_comment": "WIP Yeelp mentioned how this wasn't 100% feasible so I'm waiting to note it down here. Same thing for the damage type value"
+      },
+      "value13": {
+        "type": "attack_speed",
+        "_comment": "I don't know if we can do it for right click item usage"
+      },
+      "value14": {
+        "type": "harvest_level",
+        "value_format": "NAMED|NUMERICAL|STARS"
+      },
+      "value15": {
+        "type": "armor",
+        "show_toughness": true,
+        "special_protections": false
+      }
     }
   ]
 }
