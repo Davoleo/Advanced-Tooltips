@@ -1,5 +1,6 @@
 package com.rebirthofthenight.advancedtooltips.gui;
 
+import com.rebirthofthenight.advancedtooltips.config.GeneralConfig;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
@@ -8,7 +9,7 @@ import java.util.Set;
 
 /**
  * @deprecated AFAIK this isn't needed when you use the config annotation system in
- * {@link com.rebirthofthenight.advancedtooltips.config.TTConfig}
+ * {@link GeneralConfig}
  * -Davoleo
  */
 @Deprecated

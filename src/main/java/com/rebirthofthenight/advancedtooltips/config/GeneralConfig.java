@@ -6,7 +6,7 @@ import net.minecraftforge.common.config.Config;
 
 @Config(modid = Main.MODID)
 @Config.LangKey(ConfigHelper.Lang_Key)
-public class TTConfig {
+public class GeneralConfig {
 
     @Config.Comment("This may cause this to be incompatible with other mods when set to true")
     public static boolean useCustomFontRenderer = true;
