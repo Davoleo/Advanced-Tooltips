@@ -1,12 +1,16 @@
 package com.rebirthofthenight.advancedtooltips.tooltips.conditionals;
 
-@FunctionalInterface
-public interface IToolTipConditional<T> {
+import java.util.function.Predicate;
+
+public interface IToolTipConditional<T> extends Predicate<T> {
 
     /**
      *  The basic condition logic for when a tooltip should be added
      * @param info Condition information parameter
      * @return true if the tooltip should be added
      */
-    boolean isTooltipEnabled(T info);
+    boolean test(T info);
+
+    //String getTypeName();
+
 }

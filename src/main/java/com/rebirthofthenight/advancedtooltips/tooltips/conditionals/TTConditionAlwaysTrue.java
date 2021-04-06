@@ -7,7 +7,7 @@ package com.rebirthofthenight.advancedtooltips.tooltips.conditionals;
 public class TTConditionAlwaysTrue implements IToolTipConditional {
 
     @Override
-    public boolean isTooltipEnabled(Object info)
+    public boolean test(Object info)
     {
         return true;
     }

@@ -6,7 +6,7 @@ import org.lwjgl.input.Keyboard;
 public class TTConditionKeyPress implements IToolTipConditional<Key> {
 
     @Override
-    public boolean isTooltipEnabled(Key info)
+    public boolean test(Key info)
     {
         return Keyboard.isKeyDown(info.getId());
     }
