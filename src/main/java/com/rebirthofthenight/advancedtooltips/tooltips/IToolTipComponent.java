@@ -15,10 +15,9 @@ public interface IToolTipComponent {
      String getInternalName();
 
     /**
-     * @return the X,Y location of the tooltip.
-     * TODO the X,Y alignment method should go here. What data type? -dracominer
+     * @return The location of the tooltip component relative to the previous components in the same tooltip.
      */
-     void getLocation();
+     ToolTipComponentBase.EnumComponentFlow getLocation();
 
     /**
      *  Overriding this method allows for custom logic for determining when to add tooltips of this type.
