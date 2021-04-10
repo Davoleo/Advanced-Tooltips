@@ -41,7 +41,7 @@ public class ToolTipComponentBase implements IToolTipComponent {
     @Override
     public boolean shouldAddToStack(ItemStack stack)
     {
-        boolean firstValue = logic.getIdentity(conditions.get(1).shouldAddToStack(stack));
+        boolean firstValue = conditions.get(1).shouldAddToStack(stack);
         return conditions.stream()
                 .map(condition -> condition.shouldAddToStack(stack))
                 .reduce(logic.getIdentity(firstValue), logic.getOperator());
