@@ -1,5 +1,12 @@
 {
-  "item": "registry:name",
+  "id": "tooltip_id",
+  "should_merge_with_vanilla": true,
+  "_comment_position": "Can be omitted if should_merge_with_vanilla is true",
+  "position": "TOP|BOTTOM|LEFT|RIGHT|NULL",
+  "_comment_colors": "Colors are hexadecimal string values (need to be parsed and to output a specific error in case of wrong input) [use default tooltip colors if omitted]",
+  "background_color": "FFFF0000",
+  "border_start_color": "FF00FF00",
+  "border_end_color": "FF0000FF",
   "components": [
     {
       "_comment": "The Identifier could be moved to be a key for a component object inside of the components object, it's just another way to structure things",
