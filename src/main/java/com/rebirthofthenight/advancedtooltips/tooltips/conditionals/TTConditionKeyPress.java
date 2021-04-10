@@ -1,13 +1,27 @@
 package com.rebirthofthenight.advancedtooltips.tooltips.conditionals;
 
-import com.rebirthofthenight.advancedtooltips.datatypes.Key;
+import com.google.gson.JsonObject;
+import net.minecraft.item.ItemStack;
+import net.minecraft.util.JsonUtils;
 import org.lwjgl.input.Keyboard;
 
-public class TTConditionKeyPress implements IToolTipConditional<Key> {
+public class TTConditionKeyPress extends AbstractTooltipCondition {
+
+    public TTConditionKeyPress(JsonObject object)
+    {
+        super(object);
+    }
 
     @Override
-    public boolean test(Key info)
+    public boolean shouldAddToStack(ItemStack stack)
     {
-        return Keyboard.isKeyDown(info.getId());
+        int key = JsonUtils.getInt(object, "key");
+        return Keyboard.isKeyDown(key);
+    }
+
+    @Override
+    public String getType()
+    {
+        return "key_held";
     }
 }

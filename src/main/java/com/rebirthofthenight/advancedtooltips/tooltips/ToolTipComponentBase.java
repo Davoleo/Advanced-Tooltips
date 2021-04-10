@@ -1,7 +1,7 @@
 package com.rebirthofthenight.advancedtooltips.tooltips;
 
-import com.rebirthofthenight.advancedtooltips.datatypes.ConditionCombinationLogic;
-import com.rebirthofthenight.advancedtooltips.tooltips.conditionals.IToolTipConditional;
+import com.rebirthofthenight.advancedtooltips.datatypes.ConditionLogicOperators;
+import com.rebirthofthenight.advancedtooltips.tooltips.conditionals.AbstractTooltipCondition;
 import com.rebirthofthenight.advancedtooltips.tooltips.values.IToolTipValue;
 import net.minecraft.item.ItemStack;
 
@@ -15,14 +15,16 @@ public class ToolTipComponentBase implements IToolTipComponent {
         INLINE
     }
 
+    protected TooltipBase parent;
+
     // I think protected over private whenever possible would make this mod easier to extend for other developers -dracominer
     protected String internalName = "default_tooltip_name";
-    protected ConditionCombinationLogic logic = ConditionCombinationLogic.AND;
+    protected ConditionLogicOperators logic = ConditionLogicOperators.AND;
     protected EnumComponentFlow location;
 
     // TODO I'm not sure if LinkedList would be better? there should be relatively little insertion/deletion of these so array seems faster.
     // I may be completely confused though. -dracominer
-    protected List<IToolTipConditional> conditions = new ArrayList<>();
+    protected List<AbstractTooltipCondition> conditions = new ArrayList<>();
 
     protected IToolTipValue value;
 
@@ -37,8 +39,12 @@ public class ToolTipComponentBase implements IToolTipComponent {
     }
 
     @Override
-    public boolean shouldAddToStack(ItemStack stack) {
-        return true; // TODO add conditionals
+    public boolean shouldAddToStack(ItemStack stack)
+    {
+        boolean firstValue = logic.getIdentity(conditions.get(1).shouldAddToStack(stack));
+        return conditions.stream()
+                .map(condition -> condition.shouldAddToStack(stack))
+                .reduce(logic.getIdentity(firstValue), logic.getOperator());
     }
 
     @Override

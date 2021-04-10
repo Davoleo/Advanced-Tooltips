@@ -11,7 +11,7 @@
     {
       "_comment": "The Identifier could be moved to be a key for a component object inside of the components object, it's just another way to structure things",
       "identifier": "example_identifier",
-      "condition_logic": "AND|OR|XOR",
+      "condition_logic": "AND|OR|XOR|XNOR",
       "_comment_lore_and_name": "I am skipping lore since it's basically just like NBT in our perspective and name is probably just the registry name? which is included in item_name",
       "conditions": [
         {
